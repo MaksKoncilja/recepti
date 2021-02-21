@@ -1,8 +1,8 @@
 import bottle
 from datetime import datetime
-from model import ZbirkaReceptov, Recept, Sestavina, Glas
+from model import ZbirkaReceptov, Recept, Sestavina
 
-zbirka_receptov = ZbirkaReceptov(ime='UVP 2018/19', datoteka='recepti.json')
+zbirka_receptov = ZbirkaReceptov(ime='Mastersef', datoteka='recepti.json')
 
 @bottle.get('/')
 def osnovna_stran():

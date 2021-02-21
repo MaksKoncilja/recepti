@@ -5,7 +5,7 @@
   <h3 class="poudari">{{ recept.naslov_recepta }}</h3>
   <span class="badge badge-light">
       {{ recept.stevilo_glasov() }} glasov
-    </span>
+  </span>
     <form action="/glasuj/" method="POST">
        <input type="hidden" value="{{indeks_recepta}}" name="indeks_recepta">
        <input class="btn btn-light" type="submit" value="glasuj">
