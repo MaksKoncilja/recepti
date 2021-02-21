@@ -14,6 +14,7 @@ Ima naslednje funkcionalnosti:
 
 ## Uporabljeni viri
 Pri oblikovanju projekta sem si pomagal s predavanji, ki sta jih posnela profesor Baueri in profesor Pretnar. 
+Za vprašanja pri delu je skrbela asistentka Ajda Lampe. 
 
 
 
