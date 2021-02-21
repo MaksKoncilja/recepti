@@ -46,8 +46,8 @@ class ZbirkaReceptov:
         self.trenutni_recept = None
         self.shrani()
 
-    def glasuj(self, indeks_recepta):
-        self.trenutni_recept.glasuj_za_recept(indeks_recepta)
+    def glasuj_za_recept(self):
+        self.trenutni_recept.glasuj()
         self.shrani()
 
     def dodaj_recept(self, naslov_recepta, seznam_sestavin, cas_priprave, kalorijska_vrednost, navodila):
@@ -68,8 +68,7 @@ class Recept:
         self.navodila = navodila
         self.glasovi = []
 
-
-    def glasuj_za_recept(self, indeks_recepta):
+    def glasuj(self):
          self.glasovi.append(Glas())
 
     def stevilo_glasov(self):
