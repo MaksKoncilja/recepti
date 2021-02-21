@@ -12,7 +12,7 @@ def osnovna_stran():
 @bottle.post('/glasuj/')
 def glasuj():
     indeks_recepta = int(bottle.request.forms['indeks_recepta'])
-    zbirka_receptov.glasuj(indeks_recepta)
+    zbirka_receptov.glasuj_za_recept(indeks_recepta)
     bottle.redirect('/')
 
 

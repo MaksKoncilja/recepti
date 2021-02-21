@@ -46,7 +46,7 @@ class ZbirkaReceptov:
         self.trenutni_recept = None
         self.shrani()
 
-    def glasuj(self):
+    def glasuj_za_recept(self):
         self.trenutni_recept.glasuj()
         self.shrani()
 
