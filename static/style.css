@@ -1,0 +1,35 @@
+body {
+    margin: 0pt;
+    font-family: Helvetica;
+}
+
+h1 {
+    font-size: 200%;
+    background-color: orange;
+    padding: 10pt;
+    color: lightcoral;   
+}
+
+div.uvod {
+    margin: 10pt;
+    text-align: center;
+    font-size: 125%;
+}
+
+div.recept {
+    border: 1px solid;
+    padding: 5px;
+    margin: 10pt;
+}
+
+div.postopek {
+    clear:booth;
+    margin: 10pt;
+}
+
+div.recept img{ 
+    border: 1px solid;
+    float: left;
+    margin: 5px 15px 15px 5px;
+
+}
