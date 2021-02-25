@@ -1,19 +1,40 @@
 import bottle
+from bottle import request
 from datetime import datetime
 from model import ZbirkaReceptov, Recept, Sestavina
 
-zbirka_receptov = ZbirkaReceptov(ime='Mastersef', datoteka='recepti.json')
+zbirka_receptov = ZbirkaReceptov(ime='Mastersef', datoteka='data/recepti.json')
 
 @bottle.get('/')
 def osnovna_stran():
-    recept = zbirka_receptov.trenutni_recept
-    return bottle.template('osnovna_stran.tpl', recept=recept)
+    seznam_receptov = zbirka_receptov.recepti
+    return bottle.template('views/prva.tpl', seznam_receptov=seznam_receptov)
 
-@bottle.post('/glasuj/')
-def glasuj():
-    indeks_recepta = int(bottle.request.forms['indeks_recepta'])
-    zbirka_receptov.glasuj_za_recept(indeks_recepta)
-    bottle.redirect('/')
+
+@bottle.get('/recept/<id>')
+def recept_stran(id):
+    zbirka_receptov.odpri_recept(id)
+    recept = zbirka_receptov.trenutni_recept
+    return bottle.template('views/recept.tpl', recept=recept)
+
+
+@bottle.post('/glasuj/<id>')
+def glasuj(id):
+    zbirka_receptov.glasuj_za_recept(id)
+    bottle.redirect('/recept/' + id)
+
+
+@bottle.get('/dodaj')
+def dodaj_stran():
+    return bottle.template('views/nov_recept.tpl')
+
+
+@bottle.post('/dodaj/')
+def nov_recept():
+    naslov_recepta = request.forms.get('naslov_recepta')
+    print(naslov_recepta)
+    #zbirka_receptov.dodaj_recept(res['naslov_recepta'])
+
 
 
 bottle.run(debug=True, reloader=True)
