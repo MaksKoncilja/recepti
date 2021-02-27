@@ -15,6 +15,16 @@
     {{ sestavina.besedilo }}
   </li>
   % end
-% end
+  <form action="/recept" method="POST">
+    Ime: <input type="text" name="komentator">
+    <textarea rows="5" cols="30" name="komentar" class="mb-1">Ddodaj komentar</textarea><br>
+     <input class="btn btn-dark" type="submit" value="Komentiraj">
+  </form>
+    % for komentar in recept.komentarji:
+    <li class="list-group-item">
+    {{ komentar.ime }} , {{ komentar.besedilo }}
+  </li>
+    % end
+  % end
 
 
