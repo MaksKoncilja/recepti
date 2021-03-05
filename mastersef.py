@@ -30,13 +30,13 @@ def dodaj_stran():
 
 @bottle.post('/dodaj/')
 def nov_recept():
-    naslov_recepta = bottle.request.forms.get('naslov_recepta')
+    naslov_recepta = bottle.request.forms.getunicode('naslov_recepta')
     seznam_sestavin = list()
-    for sestavina in bottle.request.forms.get('seznam_sestavin').split('\n'):
+    for sestavina in bottle.request.forms.getunicode('seznam_sestavin').split('\n'):
         seznam_sestavin.append(Sestavina(sestavina.rstrip()))
-    cas_priprave = bottle.request.forms.get('cas_priprave')
-    kalorijska_vrednost = int(bottle.request.forms.get('kalorijska_vrednost'))
-    navodila = bottle.request.forms.get('navodila')
+    cas_priprave = bottle.request.forms.getunicode('cas_priprave')
+    kalorijska_vrednost = int(bottle.request.forms.getunicode('kalorijska_vrednost'))
+    navodila = bottle.request.forms.getunicode('navodila')
     indeks_recepta = 0
     for recept in zbirka_receptov.recepti:
         if int(recept.indeks_recepta) > indeks_recepta:
@@ -58,8 +58,8 @@ def sortirano(key):
 
 @bottle.post('/recept')
 def objavi_komentar():
-    ime= bottle.request.forms.get('komentator') 
-    besedilo = bottle.request.forms.get('komentar') 
+    ime= bottle.request.forms.getunicode('komentator') 
+    besedilo = bottle.request.forms.getunicode('komentar') 
     zbirka_receptov.trenutni_recept.dodaj_komentar(ime, besedilo)
     bottle.redirect('/recept/' + zbirka_receptov.trenutni_recept.indeks_recepta)
     

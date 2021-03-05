@@ -28,11 +28,11 @@ class ZbirkaReceptov:
             ) for r in slovar['recepti']]
 
     def shrani(self):
-        with open(self.datoteka, 'w', encoding='utf-8') as datoteka:
-            json.dump(self.v_slovar(), datoteka)
+        with open(self.datoteka, 'w', encoding="UTF-8") as datoteka:
+            json.dump(self.v_slovar(), datoteka, ensure_ascii=False)
     
     def nalozi(self):
-        with open(self.datoteka, encoding='utf-8') as datoteka:
+        with open(self.datoteka, encoding="UTF-8") as datoteka:
             self.iz_slovarja(json.load(datoteka))
 
     def odpri_recept(self, indeks_recepta):
