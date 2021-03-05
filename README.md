@@ -2,22 +2,26 @@
 Spletna stran za kuharske recepte.
 
 Ima naslednje funkcionalnosti:
-* vsak recept ima svoj seznam sestavin, čas priparve, kalorijsko vrednost in navodila, lahko tudi sliko.
-* Uporabnik lahko pregleduje recepte po raznih kriterijih: čas priprave, sestavine, kalorijska vrednost, ali je vegetarjanski recept.
+* vsak recept ima svoj seznam sestavin, čas priparve, kalorijsko vrednost in navodila.
+* Uporabnik lahko pregleduje recepte po raznih kriterijih: čas priprave, kalorijska vrednost
 * Uporabnik lahko vnese nov recept.
-* Uporabniki lahko komentirajo recepte in jih ocenjujejo.
+* Uporabniki lahko komentirajo recepte in za njih glasujejo.
 
 ## Opis prjekta
 * Spletni strežnik je narejen s python knjižnico Bottle.
 * stran je oblikovana v ogrodju Bootstrap v.5
 * informacije so shranjene v JSON formatu.
 
+## Navodila za uporabo
+zaženi kodo 'model.py'
+
 ## Uporabljeni viri
-Pri oblikovanju projekta sem si pomagal s predavanji, ki sta jih posnela profesor Baueri in profesor Pretnar. 
+Pri oblikovanju projekta sem si pomagal s predavanji, ki sta jih posnela profesor Baueri in profesor Pretnar. 'model.py' sem priredil po kodi, ki jo je zapisal profesor Pretnar.
 Za vprašanja pri delu je skrbela asistentka Ajda Lampe. 
-<<<<<<< HEAD
+
+Uporabne povezave:
+* https://bottlepy.org/docs/dev/tutorial.html
+* https://stackoverflow.com/
+* https://getbootstrap.com/
 
 
-
-=======
->>>>>>> 6d2ab63bb633b0293a36c8382496bab1feff2d5e
