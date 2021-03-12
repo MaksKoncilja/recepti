@@ -52,6 +52,7 @@ def nov_recept():
 
 @bottle.get('/<key>')
 def sortirano(key):
+    seznam_receptov = zbirka_receptov.recepti
     if key == 'h':
         seznam_receptov = sorted(zbirka_receptov.recepti, key=lambda x: x.cas_priprave.split(
             ':')[0] * 60 + x.cas_priprave.split(':')[1], reverse=True)
