@@ -23,6 +23,7 @@ class ZbirkaReceptov:
             r['kalorijska vrednost'],
             r['navodila'],
             r['indeks recepta'],
+            r['povezava slike'],
             r['glasovi'],
             [Komentar(k.split('|')[0], k.split('|')[1])
              for k in r['komentarji']]
@@ -53,9 +54,9 @@ class ZbirkaReceptov:
                 r.glasuj()
         self.shrani()
 
-    def dodaj_recept(self, naslov_recepta, seznam_sestavin, cas_priprave, kalorijska_vrednost, navodila, indeks_recepta):
+    def dodaj_recept(self, naslov_recepta, seznam_sestavin, cas_priprave, kalorijska_vrednost, navodila, indeks_recepta, povezava_slike):
         self.recepti.append(Recept(naslov_recepta, seznam_sestavin, cas_priprave,
-                                   kalorijska_vrednost, navodila, indeks_recepta, [], []))
+                                   kalorijska_vrednost, navodila, indeks_recepta, povezava_slike, [], []))
         self.shrani()
 
     def podvoji_recept(self, indeks_recepta):
@@ -64,13 +65,14 @@ class ZbirkaReceptov:
 
 
 class Recept:
-    def __init__(self, naslov_recepta, seznam_sestavin, cas_priprave, kalorijska_vrednost, navodila, indeks_recepta, glasovi, komentarji):
+    def __init__(self, naslov_recepta, seznam_sestavin, cas_priprave, kalorijska_vrednost, navodila, indeks_recepta, povezava_slike, glasovi, komentarji):
         self.naslov_recepta = naslov_recepta
         self.seznam_sestavin = seznam_sestavin
         self.cas_priprave = cas_priprave
         self.kalorijska_vrednost = kalorijska_vrednost
         self.navodila = navodila
         self.indeks_recepta = indeks_recepta
+        self.povezava_slike = povezava_slike
         self.glasovi = glasovi
         self.komentarji = komentarji
 
@@ -79,7 +81,6 @@ class Recept:
 
     def dodaj_komentar(self, ime, besedilo):
         self.komentarji.append(Komentar(ime, besedilo))
-        print("OBJAVLJEN")
 
     def stevilo_glasov(self):
         return len(self.glasovi)
@@ -90,6 +91,7 @@ class Recept:
                       self.kalorijska_vrednost,
                       self.navodila,
                       self.indeks_recepta,
+                      self.povezava_slike,
                       self.glasovi,
                       self.komentarji)
 
@@ -101,6 +103,7 @@ class Recept:
             'kalorijska vrednost': self.kalorijska_vrednost,
             'navodila': self.navodila,
             'indeks recepta': self.indeks_recepta,
+            'povezava slike' : self.povezava_slike,
             'glasovi': [g for g in self.glasovi],
             'komentarji': [h.ime + "|" + h.besedilo for h in self.komentarji]
         }

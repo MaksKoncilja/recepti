@@ -8,7 +8,8 @@
        <input class="btn btn-secondary btn-sm" type="submit" value="glasuj">
     </form>
   <div class="row mt-3"></div>
-  <p>Kalorijska vrednost: {{ recept.kalorijska_vrednost }} kal <br>
+  <img src="{{ recept.povezava_slike }}" style="float:right;width:600px" class="rounded">
+  <p class="font-italic"> Kalorijska vrednost: {{ recept.kalorijska_vrednost }} kal <br>
   Čas priprave: {{ recept.cas_priprave }} </p>
   <div class="row mt-3"></div>
   <h6>Sestavine</h6>
@@ -32,7 +33,7 @@
   <form action="/recept" method="POST">
     Ime: <input type="text" name="komentator">
     <div class="row mt-3"></div>
-    <textarea rows="5" cols="28" name="komentar" placeholder="Ddodaj komentar" class="mb-1"></textarea><br>
+    <textarea rows="5" cols="28" name="komentar" placeholder="Dodaj komentar" class="mb-1"></textarea><br>
      <input class="btn btn-secondary btn-sm" type="submit" value="Komentiraj">
   </form>
   % end
