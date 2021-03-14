@@ -103,7 +103,7 @@ class Recept:
             'kalorijska vrednost': self.kalorijska_vrednost,
             'navodila': self.navodila,
             'indeks recepta': self.indeks_recepta,
-            'povezava slike' : self.povezava_slike,
+            'povezava slike': self.povezava_slike,
             'glasovi': [g for g in self.glasovi],
             'komentarji': [h.ime + "|" + h.besedilo for h in self.komentarji]
         }
