@@ -13,7 +13,7 @@ Ima naslednje funkcionalnosti:
 * informacije so shranjene v JSON formatu.
 
 ## Navodila za uporabo
-zaženi kodo 'model.py'
+s python 3 zaženi kodo `model.py`
 
 ## Uporabljeni viri
 Pri oblikovanju projekta sem si pomagal s predavanji, ki sta jih posnela profesor Baueri in profesor Pretnar. 'model.py' sem priredil po kodi, ki jo je zapisal profesor Pretnar.
