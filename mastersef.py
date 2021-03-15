@@ -43,13 +43,10 @@ def nov_recept():
         kalorijska_vrednost = int(pogoj_kalorijski)
     navodila = bottle.request.forms.getunicode('navodila')
     povezava_slike = bottle.request.forms.get('povezava_slike')
-    indeks_recepta = 0
-    for recept in zbirka_receptov.recepti:
-        if int(recept.indeks_recepta) > indeks_recepta:
-            indeks_recepta = int(recept.indeks_recepta)
-    indeks_recepta += 1
+    indeks_recepta = zbirka_receptov.nov_indeks_recepta()
     zbirka_receptov.dodaj_recept(naslov_recepta, seznam_sestavin,
-                                 cas_priprave, kalorijska_vrednost, navodila, str(indeks_recepta), povezava_slike)
+                                 cas_priprave, kalorijska_vrednost, navodila, 
+                                 str(indeks_recepta), povezava_slike)
     bottle.redirect('/')
 
 
@@ -61,7 +58,8 @@ def sortirano(key):
             zbirka_receptov.recepti, key=lambda x: x.cas_priprave, reverse=True)
     elif key == 'k':
         seznam_receptov = sorted(
-            zbirka_receptov.recepti, key=lambda x: x.kalorijska_vrednost, reverse=False)
+            zbirka_receptov.recepti, key=lambda x: x.kalorijska_vrednost, 
+            reverse=False)
     elif key == 'g':
         seznam_receptov = sorted(
             zbirka_receptov.recepti, key=lambda x: len(x.glasovi), reverse=True)

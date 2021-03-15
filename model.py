@@ -54,9 +54,20 @@ class ZbirkaReceptov:
                 r.glasuj()
         self.shrani()
 
-    def dodaj_recept(self, naslov_recepta, seznam_sestavin, cas_priprave, kalorijska_vrednost, navodila, indeks_recepta, povezava_slike):
-        self.recepti.append(Recept(naslov_recepta, seznam_sestavin, cas_priprave,
-                                   kalorijska_vrednost, navodila, indeks_recepta, povezava_slike, [], []))
+    def nov_indeks_recepta(self):
+        indeks_recepta = 0
+        for recept in self.recepti:
+            if int(recept.indeks_recepta) > indeks_recepta:
+                indeks_recepta = int(recept.indeks_recepta)
+        indeks_recepta += 1
+        return indeks_recepta
+
+    def dodaj_recept(self, naslov_recepta, seznam_sestavin, 
+                    cas_priprave, kalorijska_vrednost, navodila, 
+                    indeks_recepta, povezava_slike):
+        self.recepti.append(Recept(naslov_recepta, seznam_sestavin, 
+                            cas_priprave, kalorijska_vrednost, navodila,
+                            indeks_recepta, povezava_slike, [], []))
         self.shrani()
 
     def podvoji_recept(self, indeks_recepta):
@@ -65,7 +76,9 @@ class ZbirkaReceptov:
 
 
 class Recept:
-    def __init__(self, naslov_recepta, seznam_sestavin, cas_priprave, kalorijska_vrednost, navodila, indeks_recepta, povezava_slike, glasovi, komentarji):
+    def __init__(self, naslov_recepta, seznam_sestavin, cas_priprave, 
+                kalorijska_vrednost, navodila, indeks_recepta, povezava_slike, 
+                glasovi, komentarji):
         self.naslov_recepta = naslov_recepta
         self.seznam_sestavin = seznam_sestavin
         self.cas_priprave = cas_priprave
@@ -86,7 +99,8 @@ class Recept:
         return len(self.glasovi)
 
     def podvoji(self):
-        return Recept(self.naslov_recepta, [sestavina.podvoji() for sestavina in self.seznam_sestavin],
+        return Recept(self.naslov_recepta, [sestavina.podvoji() for sestavina in
+                      self.seznam_sestavin],
                       self.cas_priprave,
                       self.kalorijska_vrednost,
                       self.navodila,
