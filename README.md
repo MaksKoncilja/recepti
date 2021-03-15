@@ -16,7 +16,7 @@ Ima naslednje funkcionalnosti:
 S python 3 zaženi kodo `masteršef.py`.
 
 ## Uporabljeni viri
-Pri oblikovanju projekta sem si pomagal s predavanji, ki sta jih posnela profesor Bueri in profesor Pretnar. 'model.py' sem priredil po kodi, ki jo je zapisal profesor Pretnar.
+Pri oblikovanju projekta sem si pomagal s predavanji, ki sta jih posnela profesor Bauer in profesor Pretnar. 'model.py' sem priredil po kodi, ki jo je zapisal profesor Pretnar.
 Za vprašanja pri delu je skrbela asistentka Ajda Lampe. 
 
 Uporabne povezave:
